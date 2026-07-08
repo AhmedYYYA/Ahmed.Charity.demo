@@ -1,2 +1,2 @@
 # Ahmed.Charity.demo
-A comprehensive UAE compliant webite Demo
+A comprehensive UAE-compliant website template for registered public-benefit charities. Features a professional donation interface (Zakat, Sadaqah, Waqf), volunteer registration, humanitarian program showcase, and complete bilingual privacy and AML policies. Built to comply with Federal Law No. 3 of 2021 on the Regulation of Donations, its Executive Regulation (Cabinet Decision 96/2022), ISO 9001/26000, and the Core Humanitarian Standard.
