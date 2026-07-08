@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جمعية العطاء الإماراتية | Emirates Giving Association</title>
+<meta name="description" content="جمعية خيرية مرخصة في دولة الإمارات العربية المتحدة — برامج إنسانية، زكاة وصدقات، وتطوع مجتمعي.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN TOKENS — UAE Federal Government design language
+   ============================================================ */
+:root{
+  --gold:        #B68A35;   /* u.ae primary gold */
+  --gold-dark:   #92702A;
+  --gold-tint:   #F3EBDB;
+  --charcoal:    #232528;   /* federal dark */
+  --ink:         #1B1B1B;
+  --ivory:       #F7F5F0;
+  --white:       #FFFFFF;
+  --uae-green:   #007A3D;   /* flag green — the "giving" accent */
+  --uae-red:     #EF3340;   /* flag red — ribbon only */
+  --line:        #E4DFD4;
+  --radius:      10px;
+  --shadow:      0 10px 30px rgba(35,37,40,.08);
+  --font-display:'Alexandria', sans-serif;
+  --font-body:   'Tajawal', sans-serif;
+  --maxw:        1160px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--ivory);
+  line-height:1.7;
+  font-size:16.5px;
+}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.35;color:var(--charcoal)}
+img{max-width:100%;display:block}
+a{color:var(--gold-dark)}
+
+.container{max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+
+/* Skip link (WCAG) */
+.skip-link{position:absolute;top:-60px;inset-inline-start:16px;background:var(--charcoal);color:#fff;padding:10px 18px;z-index:200;border-radius:0 0 8px 8px;transition:top .2s}
+.skip-link:focus{top:0}
+
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* ============================================================
+   HEADER + UAE FLAG RIBBON (signature element)
+   ============================================================ */
+header{position:sticky;top:0;z-index:100;background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.flag-ribbon{display:flex;height:6px}
+.flag-ribbon span{flex:1}
+.flag-ribbon .g{background:#007A3D}
+.flag-ribbon .w{background:#F4F4F4}
+.flag-ribbon .b{background:#141414}
+.flag-ribbon .r{background:#EF3340;flex:0 0 18%}
+
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{width:46px;height:46px;border-radius:50%;background:var(--charcoal);display:grid;place-items:center;color:var(--gold);font-family:var(--font-display);font-weight:800;font-size:20px;flex-shrink:0}
+.brand-text{display:flex;flex-direction:column}
+.brand-text strong{font-family:var(--font-display);font-size:16px;color:var(--charcoal)}
+.brand-text small{font-size:11.5px;color:var(--gold-dark);letter-spacing:.02em}
+
+nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+nav a{color:var(--charcoal);text-decoration:none;font-weight:500;font-size:15px;padding-block:6px;border-bottom:2px solid transparent}
+nav a:hover{border-bottom-color:var(--gold)}
+
+.lang-toggle{background:var(--charcoal);color:var(--gold);border:1.5px solid var(--gold);border-radius:999px;padding:8px 18px;font-family:var(--font-display);font-weight:600;font-size:14px;cursor:pointer}
+.lang-toggle:hover{background:var(--gold);color:var(--charcoal)}
+
+.menu-btn{display:none;background:none;border:1.5px solid var(--line);border-radius:8px;padding:8px 12px;font-size:20px;cursor:pointer;color:var(--charcoal)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{background:linear-gradient(135deg,var(--charcoal) 0%,#33363B 60%,#3D3A2E 100%);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset-inline-end:-140px;top:-140px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(182,138,53,.35);pointer-events:none}
+.hero::before{content:"";position:absolute;inset-inline-end:-60px;top:-60px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(182,138,53,.18);pointer-events:none}
+.hero-inner{padding-block:96px 110px;max-width:760px;position:relative;z-index:1}
+.hero .eyebrow{display:inline-block;color:var(--gold);font-family:var(--font-display);font-weight:600;font-size:14px;letter-spacing:.06em;border:1px solid rgba(182,138,53,.5);border-radius:999px;padding:6px 16px;margin-bottom:22px}
+.hero h1{color:#fff;font-size:clamp(30px,4.6vw,52px);font-weight:800;margin-bottom:18px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{color:rgba(255,255,255,.82);font-size:18px;max-width:620px;margin-bottom:34px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;font-family:var(--font-display);font-weight:700;font-size:15.5px;padding:14px 30px;border-radius:8px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--charcoal)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn-green{background:var(--uae-green);color:#fff}
+
+.hero-strip{background:var(--gold);color:var(--charcoal)}
+.hero-strip .container{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-block:20px}
+.stat{text-align:center}
+.stat b{display:block;font-family:var(--font-display);font-size:26px;font-weight:800}
+.stat span{font-size:13.5px;font-weight:500}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+section{padding-block:78px}
+.section-head{max-width:680px;margin-bottom:44px}
+.section-head .kicker{color:var(--gold-dark);font-family:var(--font-display);font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.section-head .kicker::before{content:"";width:34px;height:2.5px;background:var(--gold)}
+.section-head h2{font-size:clamp(24px,3.2vw,36px);font-weight:800;margin-bottom:12px}
+.section-head p{color:#555;font-size:16.5px}
+
+/* Governance */
+#governance{background:var(--white)}
+.gov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.gov-card{background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px}
+.gov-card .icon{width:48px;height:48px;border-radius:10px;background:var(--gold-tint);color:var(--gold-dark);display:grid;place-items:center;font-size:22px;margin-bottom:16px}
+.gov-card h3{font-size:18px;margin-bottom:8px}
+.gov-card p{font-size:15px;color:#555}
+.license-bar{margin-top:34px;background:var(--charcoal);color:#fff;border-radius:var(--radius);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.license-bar b{color:var(--gold);font-family:var(--font-display)}
+.license-bar small{color:rgba(255,255,255,.7);display:block;font-size:13px}
+
+/* Programs */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prog-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.prog-band{height:8px}
+.prog-band.gold{background:var(--gold)}
+.prog-band.green{background:var(--uae-green)}
+.prog-band.dark{background:var(--charcoal)}
+.prog-body{padding:26px;flex:1;display:flex;flex-direction:column}
+.prog-body h3{font-size:19px;margin-bottom:10px}
+.prog-body p{font-size:15px;color:#555;flex:1}
+.prog-meta{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;font-size:13.5px}
+.prog-meta b{color:var(--uae-green);font-family:var(--font-display)}
+.chs-note{margin-top:30px;background:var(--gold-tint);border-inline-start:4px solid var(--gold);border-radius:8px;padding:18px 22px;font-size:14.5px;color:#5a4a22}
+
+/* Donation */
+#donate{background:var(--charcoal);color:#fff}
+#donate .section-head h2{color:#fff}
+#donate .section-head p{color:rgba(255,255,255,.75)}
+.donate-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.donate-card{background:var(--white);color:var(--ink);border-radius:14px;padding:32px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.don-type{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;background:var(--ivory);border-radius:10px;padding:6px;margin-bottom:22px}
+.don-type button{border:none;background:transparent;font-family:var(--font-display);font-weight:600;font-size:14.5px;padding:11px 6px;border-radius:8px;cursor:pointer;color:#666}
+.don-type button.active{background:var(--charcoal);color:var(--gold)}
+.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.amounts button{border:1.5px solid var(--line);background:var(--white);border-radius:8px;padding:14px 6px;font-family:var(--font-display);font-weight:700;font-size:16px;cursor:pointer;color:var(--charcoal)}
+.amounts button.active{border-color:var(--uae-green);background:#EAF5EF;color:var(--uae-green)}
+.custom-amt{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:13px 16px;font-family:var(--font-body);font-size:15.5px;margin-bottom:18px}
+.donate-card .btn{width:100%;text-align:center}
+.don-note{font-size:12.5px;color:#777;margin-top:14px;text-align:center}
+.don-side h3{color:var(--gold);font-size:20px;margin-bottom:12px}
+.don-side p{color:rgba(255,255,255,.78);font-size:15px;margin-bottom:18px}
+.don-side ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.don-side li{display:flex;gap:12px;font-size:14.5px;color:rgba(255,255,255,.85)}
+.don-side li::before{content:"✓";color:var(--uae-green);background:#fff;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;flex-shrink:0;font-weight:800}
+
+/* Volunteer */
+#volunteer{background:var(--white)}
+.vol-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.vol-form{background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:32px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:var(--charcoal)}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--white)}
+.vol-points{display:flex;flex-direction:column;gap:18px;margin-top:8px}
+.vol-point{display:flex;gap:16px}
+.vol-point .n{width:42px;height:42px;border-radius:10px;background:var(--gold-tint);color:var(--gold-dark);display:grid;place-items:center;font-family:var(--font-display);font-weight:800;flex-shrink:0}
+.vol-point h4{font-size:16.5px;margin-bottom:3px}
+.vol-point p{font-size:14.5px;color:#555}
+.form-msg{display:none;margin-top:14px;background:#EAF5EF;color:var(--uae-green);border-radius:8px;padding:12px 16px;font-weight:700;font-size:14.5px}
+
+/* News */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.news-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.news-date{font-size:12.5px;color:var(--gold-dark);font-weight:700;font-family:var(--font-display);margin-bottom:10px;display:block}
+.news-card h3{font-size:17px;margin-bottom:8px}
+.news-card p{font-size:14.5px;color:#555;margin-bottom:14px}
+.news-card a{font-weight:700;font-size:14px;text-decoration:none}
+
+/* Footer */
+footer{background:var(--charcoal);color:rgba(255,255,255,.75)}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;padding-block:56px 36px}
+.foot-grid h4{color:var(--gold);font-size:16px;margin-bottom:14px}
+.foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-grid a{color:rgba(255,255,255,.75);text-decoration:none;font-size:14.5px}
+.foot-grid a:hover{color:var(--gold)}
+.foot-grid p{font-size:14.5px}
+.legal{border-top:1px solid rgba(255,255,255,.12);padding-block:20px;font-size:12.5px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 960px){
+  .gov-grid,.prog-grid,.news-grid{grid-template-columns:1fr 1fr}
+  .donate-grid,.vol-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero-strip .container{grid-template-columns:1fr 1fr;row-gap:18px}
+}
+@media (max-width: 640px){
+  nav ul{position:fixed;inset-inline:0;top:76px;background:var(--white);flex-direction:column;gap:0;padding:10px 0;box-shadow:0 12px 24px rgba(0,0,0,.12);display:none}
+  nav ul.open{display:flex}
+  nav li{width:100%}
+  nav a{display:block;padding:14px 26px;border-bottom:none}
+  .menu-btn{display:block}
+  .gov-grid,.prog-grid,.news-grid,.foot-grid{grid-template-columns:1fr}
+  .hero-inner{padding-block:64px 72px}
+}
+
+/* ============================================================
+   POLICY MODALS (Privacy PDPL + AML) — merged documents
+   ============================================================ */
+.modal-overlay{position:fixed;inset:0;background:rgba(20,20,20,.65);z-index:300;display:none;align-items:flex-start;justify-content:center;padding:4vh 16px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:var(--ivory);max-width:860px;width:100%;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4);direction:rtl;text-align:right}
+.modal-head{background:var(--charcoal);color:#fff;padding:20px 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;position:sticky;top:0}
+.modal-head h2{color:var(--gold);font-size:18px;border:none;padding:0;margin:0}
+.modal-close{background:none;border:1.5px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;width:36px;height:36px;font-size:18px;cursor:pointer;flex-shrink:0}
+.modal-close:hover{border-color:var(--gold);color:var(--gold)}
+.modal-body{padding:28px 30px 40px;max-height:72vh;overflow-y:auto;line-height:1.9}
+.modal-body .pol-meta{color:var(--gold-dark);font-weight:700;font-size:13px;margin-bottom:22px}
+.modal-body .pol-notice{background:var(--gold-tint);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:13.5px;color:#5a4a22;margin-bottom:26px}
+.modal-body h3{font-size:17px;font-weight:700;margin:26px 0 8px;padding-inline-start:12px;border-inline-start:4px solid var(--gold);color:var(--charcoal)}
+.modal-body p,.modal-body li{color:#3a3a3a;font-size:14.5px}
+.modal-body ul{padding-inline-start:20px;margin-block:6px}
+.modal-body li{margin-bottom:5px}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skip">تجاوز إلى المحتوى الرئيسي</a>
+
+<header>
+  <div class="flag-ribbon" aria-hidden="true">
+    <span class="r"></span><span class="g"></span><span class="w"></span><span class="b"></span>
+  </div>
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark">ع</span>
+      <span class="brand-text">
+        <strong data-i18n="brand">جمعية العطاء الإماراتية</strong>
+        <small data-i18n="brandSub">مرخصة اتحادياً — دولة الإمارات العربية المتحدة</small>
+      </span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul id="navMenu">
+        <li><a href="#governance" data-i18n="navGov">الحوكمة</a></li>
+        <li><a href="#programs" data-i18n="navProg">برامجنا</a></li>
+        <li><a href="#donate" data-i18n="navDon">تبرّع</a></li>
+        <li><a href="#volunteer" data-i18n="navVol">التطوع</a></li>
+        <li><a href="#news" data-i18n="navNews">الأخبار</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">English</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="container hero-inner">
+    <span class="eyebrow" data-i18n="heroEyebrow">عام الاستدامة في العطاء</span>
+    <h1 data-i18n-html="heroTitle">عطاؤنا امتدادٌ لقيم <em>زايد</em>، وأثرُه يصل حيث تشتد الحاجة</h1>
+    <p data-i18n="heroText">جمعية خيرية إماراتية مرخصة تعمل وفق أعلى معايير الحوكمة والشفافية، لتحويل تبرعاتكم إلى أثر إنساني موثّق داخل الدولة وخارجها.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="#donate" data-i18n="heroCta1">تبرّع الآن</a>
+      <a class="btn btn-outline" href="#programs" data-i18n="heroCta2">اكتشف برامجنا</a>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <div class="container">
+      <div class="stat"><b>142,500+</b><span data-i18n="stat1">مستفيد خلال 2025</span></div>
+      <div class="stat"><b>28</b><span data-i18n="stat2">برنامجاً إنسانياً نشطاً</span></div>
+      <div class="stat"><b>92%</b><span data-i18n="stat3">من التبرعات تصل للمستفيدين</span></div>
+      <div class="stat"><b>3,400+</b><span data-i18n="stat4">متطوع مسجّل</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- GOVERNANCE -->
+<section id="governance">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker" data-i18n="govKicker">الحوكمة والامتثال</div>
+      <h2 data-i18n="govTitle">شفافية بمعايير حكومة دولة الإمارات</h2>
+      <p data-i18n="govText">نعمل بموجب القانون الاتحادي رقم (3) لسنة 2021 بشأن تنظيم جمع التبرعات، وتخضع عملياتنا للرقابة المالية والتدقيق السنوي المستقل.</p>
+    </div>
+    <div class="gov-grid">
+      <div class="gov-card reveal">
+        <div class="icon">⚖</div>
+        <h3 data-i18n="gov1T">امتثال قانوني كامل</h3>
+        <p data-i18n="gov1P">جميع حملات جمع التبرعات مرخصة مسبقاً من الجهات المختصة، ولا يتم استلام أي تبرع خارج القنوات الرسمية المعتمدة.</p>
+      </div>
+      <div class="gov-card reveal">
+        <div class="icon">🛡</div>
+        <h3 data-i18n="gov2T">معايير ISO الدولية</h3>
+        <p data-i18n="gov2P">أنظمة إدارتنا متوائمة مع ISO 9001 لإدارة الجودة و ISO 26000 للمسؤولية المجتمعية، مع مراجعة دورية للعمليات.</p>
+      </div>
+      <div class="gov-card reveal">
+        <div class="icon">🤝</div>
+        <h3 data-i18n="gov3T">المعيار الإنساني الأساسي (CHS)</h3>
+        <p data-i18n="gov3P">برامجنا مصممة وفق الالتزامات التسعة للمعيار الإنساني الأساسي: الكرامة، المساءلة، والمشاركة الفاعلة للمستفيدين.</p>
+      </div>
+    </div>
+    <div class="license-bar reveal">
+      <div>
+        <b data-i18n="licLabel">رقم الترخيص: MOCD-CH-0000/2026</b>
+        <small data-i18n="licSub">صادر عن وزارة تنمية المجتمع — يُستبدل برقم الترخيص الفعلي عند الإطلاق</small>
+      </div>
+      <a class="btn btn-gold" href="#" data-i18n="licBtn">التقارير المالية السنوية</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker" data-i18n="progKicker">برامجنا وأثرنا</div>
+      <h2 data-i18n="progTitle">برامج إنسانية بأثر موثّق وقابل للقياس</h2>
+      <p data-i18n="progText">كل برنامج يُدار بمؤشرات أداء واضحة، ويُنشر أثره في تقارير ربع سنوية علنية.</p>
+    </div>
+    <div class="prog-grid">
+      <article class="prog-card reveal">
+        <div class="prog-band gold"></div>
+        <div class="prog-body">
+          <h3 data-i18n="prog1T">كسوة وسقيا الخير</h3>
+          <p data-i18n="prog1P">توفير الملابس ومياه الشرب النظيفة للأسر المتعففة داخل الدولة وللمجتمعات المتأثرة بالأزمات في الدول الشقيقة.</p>
+          <div class="prog-meta"><span data-i18n="progReach">المستفيدون</span><b>48,200</b></div>
+        </div>
+      </article>
+      <article class="prog-card reveal">
+        <div class="prog-band green"></div>
+        <div class="prog-body">
+          <h3 data-i18n="prog2T">التعليم للجميع</h3>
+          <p data-i18n="prog2P">منح دراسية وحقائب مدرسية ودعم رسوم التعليم لأبناء الأسر محدودة الدخل، بالشراكة مع مؤسسات التعليم الوطنية.</p>
+          <div class="prog-meta"><span data-i18n="progReach">المستفيدون</span><b>12,750</b></div>
+        </div>
+      </article>
+      <article class="prog-card reveal">
+        <div class="prog-band dark"></div>
+        <div class="prog-body">
+          <h3 data-i18n="prog3T">الإغاثة الإنسانية العاجلة</h3>
+          <p data-i18n="prog3P">استجابة سريعة للكوارث والأزمات الإنسانية بالتنسيق مع الهلال الأحمر الإماراتي والمنظمات الأممية المعتمدة.</p>
+          <div class="prog-meta"><span data-i18n="progReach">المستفيدون</span><b>81,550</b></div>
+        </div>
+      </article>
+    </div>
+    <div class="chs-note reveal" data-i18n="chsNote">التزاماً بمبادئ العمل الإنساني، لا تنشر الجمعية صوراً تمسّ كرامة المستفيدين، وتُدار جميع البيانات وفق سياسات حماية البيانات الشخصية المعمول بها في الدولة.</div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section id="donate">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker" style="color:var(--gold)" data-i18n="donKicker">الزكاة والصدقات</div>
+      <h2 data-i18n="donTitle">تبرّعك أمانة — ووصوله مسؤوليتنا</h2>
+      <p data-i18n="donText">اختر نوع تبرعك والمبلغ، وستصل مساهمتك عبر قنوات دفع آمنة ومرخصة.</p>
+    </div>
+    <div class="donate-grid">
+      <div class="donate-card reveal">
+        <div class="don-type" role="tablist" aria-label="Donation type">
+          <button class="active" data-don="zakat" data-i18n="donZakat">زكاة</button>
+          <button data-don="sadaqah" data-i18n="donSadaqah">صدقة</button>
+          <button data-don="waqf" data-i18n="donWaqf">وقف</button>
+        </div>
+        <div class="amounts">
+          <button data-amt="50">50 <small data-i18n="aed">د.إ</small></button>
+          <button data-amt="100" class="active">100 <small data-i18n="aed">د.إ</small></button>
+          <button data-amt="500">500 <small data-i18n="aed">د.إ</small></button>
+        </div>
+        <input class="custom-amt" id="customAmt" type="number" min="1" data-i18n-ph="donCustom" placeholder="أو أدخل مبلغاً آخر (درهم إماراتي)">
+        <button class="btn btn-green" id="donateBtn" data-i18n="donBtn">إتمام التبرع</button>
+        <p class="don-note" data-i18n="donNote">تُفعَّل بوابة الدفع (مثل بوابة الدفع للحكومة الاتحادية أو مزوّد مرخص) عند الربط التقني. لا تُجمع أي بيانات بطاقات في هذه الصفحة.</p>
+      </div>
+      <div class="don-side reveal">
+        <h3 data-i18n="donSideT">لماذا تثق بعطائك معنا؟</h3>
+        <p data-i18n="donSideP">تُدار أموال الزكاة في حسابات منفصلة وتُصرف في مصارفها الشرعية الثمانية، بإشراف لجنة شرعية معتمدة.</p>
+        <ul>
+          <li data-i18n="donLi1">إيصال رسمي فوري لكل تبرع، معتمد للأغراض الضريبية والتوثيقية</li>
+          <li data-i18n="donLi2">تقرير أثر يصلك خلال 90 يوماً يوضح أين ذهب تبرعك</li>
+          <li data-i18n="donLi3">تدقيق مالي خارجي سنوي تُنشر نتائجه علناً</li>
+          <li data-i18n="donLi4">لجنة رقابة شرعية لضمان الالتزام بأحكام الزكاة والوقف</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER -->
+<section id="volunteer">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker" data-i18n="volKicker">التطوع المجتمعي</div>
+      <h2 data-i18n="volTitle">انضم إلى 3,400 متطوع يصنعون الأثر</h2>
+      <p data-i18n="volText">التسجيل متاح للمواطنين والمقيمين، وتُحتسب ساعات التطوع ضمن المنصة الوطنية للتطوع.</p>
+    </div>
+    <div class="vol-grid">
+      <div class="vol-points reveal">
+        <div class="vol-point"><div class="n">١</div><div><h4 data-i18n="volP1T">سجّل بياناتك</h4><p data-i18n="volP1P">نموذج واحد بسيط، وتصلك رسالة تأكيد خلال يومي عمل.</p></div></div>
+        <div class="vol-point"><div class="n">٢</div><div><h4 data-i18n="volP2T">اختر مجالك</h4><p data-i18n="volP2P">ميداني، لوجستي، رقمي، أو تخصصي (طبي، هندسي، إعلامي).</p></div></div>
+        <div class="vol-point"><div class="n">٣</div><div><h4 data-i18n="volP3T">اصنع الأثر</h4><p data-i18n="volP3P">شهادات ساعات تطوع معتمدة، وأولوية في البرامج الوطنية.</p></div></div>
+      </div>
+      <form class="vol-form reveal" id="volForm" novalidate>
+        <div class="field">
+          <label for="vName" data-i18n="fName">الاسم الكامل</label>
+          <input id="vName" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="vEmail" data-i18n="fEmail">البريد الإلكتروني</label>
+          <input id="vEmail" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="vPhone" data-i18n="fPhone">رقم الهاتف (الإمارات)</label>
+          <input id="vPhone" type="tel" placeholder="05X XXX XXXX" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="vArea" data-i18n="fArea">مجال التطوع المفضل</label>
+          <select id="vArea">
+            <option data-i18n="fArea1">ميداني — توزيع ومساعدات</option>
+            <option data-i18n="fArea2">لوجستي — مستودعات ونقل</option>
+            <option data-i18n="fArea3">رقمي — تصميم ومحتوى</option>
+            <option data-i18n="fArea4">تخصصي — طبي / هندسي / إعلامي</option>
+          </select>
+        </div>
+        <button class="btn btn-gold" type="submit" style="width:100%" data-i18n="fSubmit">إرسال طلب التطوع</button>
+        <div class="form-msg" id="volMsg" data-i18n="fMsg">شكراً لك! تم استلام طلبك وسنتواصل معك خلال يومي عمل.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker" data-i18n="newsKicker">المركز الإعلامي</div>
+      <h2 data-i18n="newsTitle">آخر الأخبار والتقارير</h2>
+    </div>
+    <div class="news-grid">
+      <article class="news-card reveal">
+        <span class="news-date" data-i18n="n1D">28 يونيو 2026</span>
+        <h3 data-i18n="n1T">إطلاق حملة "سقيا الصيف" في خمس إمارات</h3>
+        <p data-i18n="n1P">توزيع 200 ألف عبوة مياه على العمال والأسر المتعففة خلال أشهر الصيف بالتعاون مع الشركاء المحليين.</p>
+        <a href="#" data-i18n="readMore">اقرأ المزيد ←</a>
+      </article>
+      <article class="news-card reveal">
+        <span class="news-date" data-i18n="n2D">14 يونيو 2026</span>
+        <h3 data-i18n="n2T">نشر تقرير الأثر النصف سنوي 2026</h3>
+        <p data-i18n="n2P">التقرير يوثق وصول 92% من إجمالي التبرعات إلى المستفيدين مباشرة، مع تفصيل كامل للمصروفات التشغيلية.</p>
+        <a href="#" data-i18n="readMore">اقرأ المزيد ←</a>
+      </article>
+      <article class="news-card reveal">
+        <span class="news-date" data-i18n="n3D">2 يونيو 2026</span>
+        <h3 data-i18n="n3T">شراكة جديدة مع المنصة الوطنية للتطوع</h3>
+        <p data-i18n="n3P">اعتماد ساعات التطوع في برامج الجمعية ضمن السجل الوطني للمتطوعين في دولة الإمارات.</p>
+        <a href="#" data-i18n="readMore">اقرأ المزيد ←</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4 data-i18n="brand">جمعية العطاء الإماراتية</h4>
+        <p data-i18n="footAbout">جمعية أهلية ذات نفع عام، مشهرة ومرخصة في دولة الإمارات العربية المتحدة، تعمل وفق القانون الاتحادي رقم (3) لسنة 2021 بشأن تنظيم جمع التبرعات.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footLinks">روابط سريعة</h4>
+        <ul>
+          <li><a href="#governance" data-i18n="navGov">الحوكمة</a></li>
+          <li><a href="#programs" data-i18n="navProg">برامجنا</a></li>
+          <li><a href="#donate" data-i18n="navDon">تبرّع</a></li>
+          <li><a href="#volunteer" data-i18n="navVol">التطوع</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footLegal">الامتثال</h4>
+        <ul>
+          <li><a href="#" data-modal="privacyModal" data-i18n="footL1">سياسة الخصوصية وحماية البيانات</a></li>
+          <li><a href="#" data-i18n="footL2">الشروط والأحكام</a></li>
+          <li><a href="#" data-modal="amlModal" data-i18n="footL3">سياسة مكافحة غسل الأموال</a></li>
+          <li><a href="#" data-i18n="footL4">التقارير المالية المدققة</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span data-i18n="copyright">© 2026 جمعية العطاء الإماراتية — جميع الحقوق محفوظة</span>
+      <span data-i18n="licShort">ترخيص رقم MOCD-CH-0000/2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     MODAL 1 — سياسة الخصوصية (PDPL — المرسوم بقانون اتحادي 45/2021)
+     ============================================================ -->
+<div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+  <div class="modal" lang="ar">
+    <div class="modal-head">
+      <h2 id="privacyTitle">سياسة الخصوصية وحماية البيانات الشخصية</h2>
+      <button class="modal-close" aria-label="إغلاق">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="pol-meta">آخر تحديث: يوليو 2026 — صادرة وفقاً للمرسوم بقانون اتحادي رقم (45) لسنة 2021 بشأن حماية البيانات الشخصية</div>
+      <div class="pol-notice">هذه الوثيقة نموذج استرشادي مُعدّ للمراجعة القانونية. يجب اعتمادها من المستشار القانوني للجمعية ومسؤول حماية البيانات قبل النشر الرسمي، واستكمال الحقول المميزة بين معقوفتين [ ].</div>
+
+      <h3>1. مقدمة والتعريف بالمتحكم في البيانات</h3>
+      <p>تلتزم جمعية العطاء الإماراتية («الجمعية»)، المرخصة بموجب الترخيص رقم [رقم الترخيص] الصادر عن [وزارة تنمية المجتمع / الجهة المختصة]، بحماية البيانات الشخصية لجميع المتبرعين والمتطوعين والمستفيدين وزوار الموقع الإلكتروني، وفقاً لأحكام المرسوم بقانون اتحادي رقم (45) لسنة 2021 ولوائحه التنفيذية. الجمعية هي «المتحكم في البيانات» بالمعنى الوارد في القانون، وعنوانها المسجل: [العنوان الكامل].</p>
+
+      <h3>2. فئات البيانات الشخصية التي نجمعها</h3>
+      <ul>
+        <li><strong>بيانات المتبرعين:</strong> الاسم، البريد الإلكتروني، رقم الهاتف، قيمة التبرع ونوعه (زكاة/صدقة/وقف)، ومرجع عملية الدفع. لا تجمع الجمعية أو تخزّن بيانات البطاقات المصرفية؛ إذ تُعالج عمليات الدفع بالكامل لدى مزوّد بوابة دفع مرخص.</li>
+        <li><strong>بيانات المتطوعين:</strong> الاسم، البريد الإلكتروني، رقم الهاتف، مجال التطوع المفضل، وأي مؤهلات تخصصية يقدمها المتطوع طوعاً.</li>
+        <li><strong>بيانات المستفيدين:</strong> تُجمع بالحد الأدنى اللازم لتقديم المساعدة، وتُعامل بسرية مشددة صوناً لكرامتهم.</li>
+        <li><strong>بيانات تقنية:</strong> عنوان بروتوكول الإنترنت، نوع المتصفح، وملفات تعريف الارتباط الأساسية لتشغيل الموقع.</li>
+      </ul>
+
+      <h3>3. الأساس القانوني وأغراض المعالجة</h3>
+      <p>نعالج البيانات الشخصية استناداً إلى: (أ) موافقتكم الصريحة عند التبرع أو التسجيل؛ (ب) الالتزامات القانونية المفروضة على الجمعية بموجب تشريعات تنظيم جمع التبرعات ومكافحة غسل الأموال؛ (ج) المصلحة المشروعة في إدارة البرامج وإصدار الإيصالات وتقارير الأثر. ولا تُستخدم البيانات لأي غرض تسويقي دون موافقة مسبقة قابلة للسحب في أي وقت.</p>
+
+      <h3>4. حقوق أصحاب البيانات</h3>
+      <p>يحق لكل صاحب بيانات، وفقاً للمواد (13) إلى (18) من القانون، ما يلي:</p>
+      <ul>
+        <li>الحصول على نسخة من بياناته الشخصية المعالجة لدى الجمعية</li>
+        <li>طلب تصحيح البيانات غير الدقيقة أو استكمال الناقصة</li>
+        <li>طلب المحو أو تقييد المعالجة في الحالات التي يجيزها القانون</li>
+        <li>نقل البيانات بصيغة قابلة للقراءة آلياً</li>
+        <li>الاعتراض على المعالجة وسحب الموافقة دون أن يؤثر ذلك على مشروعية المعالجة السابقة</li>
+      </ul>
+      <p>تُقدَّم الطلبات إلى مسؤول حماية البيانات عبر البريد: [dpo@example.ae]، ويتم الرد خلال المدد المقررة قانوناً.</p>
+
+      <h3>5. مشاركة البيانات ونقلها خارج الدولة</h3>
+      <p>لا تبيع الجمعية البيانات الشخصية ولا تتاجر بها مطلقاً. وقد تُشارك البيانات حصراً مع: الجهات الرقابية المختصة عند الطلب القانوني، ومزوّد بوابة الدفع المرخص، ومزودي الخدمات التقنية الملتزمين تعاقدياً بمعايير حماية مكافئة. ولا يتم أي نقل للبيانات خارج الدولة إلا وفقاً لضوابط المادتين (22) و(23) من القانون.</p>
+
+      <h3>6. أمن البيانات ومدة الاحتفاظ</h3>
+      <p>تطبق الجمعية تدابير تقنية وتنظيمية مناسبة تشمل التشفير أثناء النقل، وتقييد الصلاحيات، والمراجعة الدورية. ويُحتفظ ببيانات المتبرعين والسجلات المالية لمدة لا تقل عن خمس سنوات التزاماً بمتطلبات مكافحة غسل الأموال، ثم تُتلف بشكل آمن.</p>
+
+      <h3>7. الإبلاغ عن اختراق البيانات</h3>
+      <p>في حال وقوع أي اختراق يمس البيانات الشخصية، تلتزم الجمعية بإخطار مكتب الإمارات للبيانات وأصحاب البيانات المتأثرين وفقاً للإجراءات والمدد المنصوص عليها في القانون ولائحته التنفيذية.</p>
+
+      <h3>8. ملفات تعريف الارتباط</h3>
+      <p>يستخدم الموقع ملفات تعريف ارتباط أساسية لتشغيل الوظائف الرئيسية (مثل تفضيل اللغة). ولا تُستخدم ملفات تتبع إعلانية.</p>
+
+      <h3>9. التواصل والشكاوى</h3>
+      <p>لأي استفسار أو شكوى تتعلق بالخصوصية: مسؤول حماية البيانات — [dpo@example.ae] — هاتف: [رقم الهاتف]. ويحق لصاحب البيانات التظلم أمام مكتب الإمارات للبيانات إذا لم يُعالج طلبه بشكل مرضٍ.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODAL 2 — سياسة مكافحة غسل الأموال (المرسوم بقانون اتحادي 20/2018)
+     ============================================================ -->
+<div class="modal-overlay" id="amlModal" role="dialog" aria-modal="true" aria-labelledby="amlTitle">
+  <div class="modal" lang="ar">
+    <div class="modal-head">
+      <h2 id="amlTitle">سياسة مكافحة غسل الأموال وتمويل الإرهاب</h2>
+      <button class="modal-close" aria-label="إغلاق">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="pol-meta">آخر تحديث: يوليو 2026 — وفقاً للمرسوم بقانون اتحادي رقم (20) لسنة 2018 وتعديلاته ولوائحه التنفيذية</div>
+      <div class="pol-notice">هذه الوثيقة نموذج استرشادي مُعدّ للمراجعة القانونية. يجب اعتمادها من مجلس إدارة الجمعية ومسؤول الامتثال قبل النشر، واستكمال الحقول المميزة بين معقوفتين [ ]، ومواءمتها مع أي تعاميم تصدرها الجهة الرقابية المختصة بالجمعيات ذات النفع العام.</div>
+
+      <h3>1. الهدف ونطاق التطبيق</h3>
+      <p>تهدف هذه السياسة إلى ضمان عدم استغلال أنشطة جمعية العطاء الإماراتية أو قنوات جمع التبرعات لديها في أي عمليات غسل أموال أو تمويل إرهاب أو تمويل تنظيمات غير مشروعة. وتسري على جميع أعضاء مجلس الإدارة والموظفين والمتطوعين والشركاء المنفذين، وعلى جميع التبرعات النقدية والعينية والإلكترونية دون استثناء.</p>
+
+      <h3>2. الإطار التشريعي</h3>
+      <ul>
+        <li>المرسوم بقانون اتحادي رقم (20) لسنة 2018 في شأن مواجهة جرائم غسل الأموال ومكافحة تمويل الإرهاب وتمويل التنظيمات غير المشروعة، وتعديلاته</li>
+        <li>قرار مجلس الوزراء رقم (10) لسنة 2019 بشأن اللائحة التنفيذية للمرسوم المذكور</li>
+        <li>القانون الاتحادي رقم (3) لسنة 2021 بشأن تنظيم جمع التبرعات</li>
+        <li>قرارات مجلس الوزراء ذات الصلة بقوائم الإرهاب المحلية وتنفيذ قرارات مجلس الأمن الدولي</li>
+      </ul>
+
+      <h3>3. قنوات التبرع المعتمدة</h3>
+      <p>لا تقبل الجمعية أي تبرع إلا عبر القنوات الرسمية المرخصة: بوابة الدفع الإلكترونية المعتمدة على الموقع، والتحويل المصرفي إلى الحسابات الرسمية المسجلة باسم الجمعية، ونقاط التحصيل المرخصة. ويُحظر على أي موظف أو متطوع استلام تبرعات نقدية خارج هذه القنوات.</p>
+
+      <h3>4. العناية الواجبة تجاه المتبرعين (KYD)</h3>
+      <ul>
+        <li>التحقق من هوية المتبرع للتبرعات التي تبلغ أو تتجاوز [الحد المعتمد — مثال: 3,500 درهم] أو ما يعادلها</li>
+        <li>عدم قبول التبرعات مجهولة المصدر التي تتجاوز الحد المعتمد، أو أي تبرع يُشتبه في مصدره أياً كانت قيمته</li>
+        <li>تطبيق عناية مشددة على التبرعات الواردة من خارج الدولة أو من أشخاص اعتباريين ذوي هياكل ملكية معقدة</li>
+        <li>فحص أسماء المتبرعين الكبار والشركاء المنفذين مقابل قائمة الإرهاب المحلية وقوائم مجلس الأمن الدولي قبل قبول التبرع أو إبرام الشراكة</li>
+      </ul>
+
+      <h3>5. مؤشرات الاشتباه</h3>
+      <p>تشمل مؤشرات الاشتباه التي توجب التصعيد الفوري لمسؤول الامتثال، على سبيل المثال لا الحصر: التبرعات الكبيرة غير المتناسبة مع الملف المعروف للمتبرع، وطلب المتبرع توجيه الأموال إلى مستفيد محدد خارج برامج الجمعية، وتجزئة التبرعات لتفادي حدود التحقق، وطلب استرداد تبرع بعد فترة وجيزة إلى حساب مختلف.</p>
+
+      <h3>6. الإبلاغ عن المعاملات المشبوهة</h3>
+      <p>يلتزم مسؤول الامتثال برفع تقارير المعاملات المشبوهة (STR) إلى وحدة المعلومات المالية بدولة الإمارات عبر منصة goAML فور توافر أسباب معقولة للاشتباه، دون إخطار المتبرع المعني («حظر التنبيه»). ولا يجوز لأي موظف التصرف في المعاملة محل الاشتباه قبل توجيهات الوحدة.</p>
+
+      <h3>7. حفظ السجلات</h3>
+      <p>تحتفظ الجمعية بجميع سجلات التبرعات ووثائق التحقق من الهوية والمراسلات ذات الصلة لمدة لا تقل عن خمس سنوات من تاريخ المعاملة أو انتهاء العلاقة، بصيغة تتيح تقديمها للجهات المختصة عند الطلب.</p>
+
+      <h3>8. الحوكمة والمسؤوليات</h3>
+      <ul>
+        <li><strong>مجلس الإدارة:</strong> اعتماد السياسة ومراجعتها سنوياً وتوفير الموارد اللازمة لتطبيقها</li>
+        <li><strong>مسؤول الامتثال:</strong> [الاسم/المنصب] — نقطة الاتصال مع الجهات الرقابية، وإدارة الفحص والإبلاغ والتدريب</li>
+        <li><strong>التدقيق:</strong> يخضع تطبيق السياسة لمراجعة التدقيق الداخلي والمدقق الخارجي سنوياً</li>
+      </ul>
+
+      <h3>9. التدريب والجزاءات</h3>
+      <p>يتلقى جميع الموظفين والمتطوعين المعنيين بالتحصيل تدريباً سنوياً إلزامياً على هذه السياسة. ويُعد أي إخلال بها مخالفة جسيمة تستوجب المساءلة التأديبية، دون الإخلال بالمسؤولية الجنائية المقررة قانوناً.</p>
+
+      <h3>10. التواصل</h3>
+      <p>للاستفسارات أو الإبلاغ الداخلي عن مخاوف تتعلق بالامتثال: [compliance@example.ae] — وتُعامل جميع البلاغات الداخلية بسرية تامة مع حماية المبلّغين بحسن نية.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   i18n DICTIONARY — Arabic (default) / English
+   ============================================================ */
+const I18N = {
+  ar: {
+    skip:"تجاوز إلى المحتوى الرئيسي",
+    brand:"جمعية العطاء الإماراتية",
+    brandSub:"مرخصة اتحادياً — دولة الإمارات العربية المتحدة",
+    navGov:"الحوكمة", navProg:"برامجنا", navDon:"تبرّع", navVol:"التطوع", navNews:"الأخبار",
+    heroEyebrow:"عام الاستدامة في العطاء",
+    heroTitle:"عطاؤنا امتدادٌ لقيم <em>زايد</em>، وأثرُه يصل حيث تشتد الحاجة",
+    heroText:"جمعية خيرية إماراتية مرخصة تعمل وفق أعلى معايير الحوكمة والشفافية، لتحويل تبرعاتكم إلى أثر إنساني موثّق داخل الدولة وخارجها.",
+    heroCta1:"تبرّع الآن", heroCta2:"اكتشف برامجنا",
+    stat1:"مستفيد خلال 2025", stat2:"برنامجاً إنسانياً نشطاً", stat3:"من التبرعات تصل للمستفيدين", stat4:"متطوع مسجّل",
+    govKicker:"الحوكمة والامتثال",
+    govTitle:"شفافية بمعايير حكومة دولة الإمارات",
+    govText:"نعمل بموجب القانون الاتحادي رقم (3) لسنة 2021 بشأن تنظيم جمع التبرعات، وتخضع عملياتنا للرقابة المالية والتدقيق السنوي المستقل.",
+    gov1T:"امتثال قانوني كامل",
+    gov1P:"جميع حملات جمع التبرعات مرخصة مسبقاً من الجهات المختصة، ولا يتم استلام أي تبرع خارج القنوات الرسمية المعتمدة.",
+    gov2T:"معايير ISO الدولية",
+    gov2P:"أنظمة إدارتنا متوائمة مع ISO 9001 لإدارة الجودة و ISO 26000 للمسؤولية المجتمعية، مع مراجعة دورية للعمليات.",
+    gov3T:"المعيار الإنساني الأساسي (CHS)",
+    gov3P:"برامجنا مصممة وفق الالتزامات التسعة للمعيار الإنساني الأساسي: الكرامة، المساءلة، والمشاركة الفاعلة للمستفيدين.",
+    licLabel:"رقم الترخيص: MOCD-CH-0000/2026",
+    licSub:"صادر عن وزارة تنمية المجتمع — يُستبدل برقم الترخيص الفعلي عند الإطلاق",
+    licBtn:"التقارير المالية السنوية",
+    progKicker:"برامجنا وأثرنا",
+    progTitle:"برامج إنسانية بأثر موثّق وقابل للقياس",
+    progText:"كل برنامج يُدار بمؤشرات أداء واضحة، ويُنشر أثره في تقارير ربع سنوية علنية.",
+    prog1T:"كسوة وسقيا الخير",
+    prog1P:"توفير الملابس ومياه الشرب النظيفة للأسر المتعففة داخل الدولة وللمجتمعات المتأثرة بالأزمات في الدول الشقيقة.",
+    prog2T:"التعليم للجميع",
+    prog2P:"منح دراسية وحقائب مدرسية ودعم رسوم التعليم لأبناء الأسر محدودة الدخل، بالشراكة مع مؤسسات التعليم الوطنية.",
+    prog3T:"الإغاثة الإنسانية العاجلة",
+    prog3P:"استجابة سريعة للكوارث والأزمات الإنسانية بالتنسيق مع الهلال الأحمر الإماراتي والمنظمات الأممية المعتمدة.",
+    progReach:"المستفيدون",
+    chsNote:"التزاماً بمبادئ العمل الإنساني، لا تنشر الجمعية صوراً تمسّ كرامة المستفيدين، وتُدار جميع البيانات وفق سياسات حماية البيانات الشخصية المعمول بها في الدولة.",
+    donKicker:"الزكاة والصدقات",
+    donTitle:"تبرّعك أمانة — ووصوله مسؤوليتنا",
+    donText:"اختر نوع تبرعك والمبلغ، وستصل مساهمتك عبر قنوات دفع آمنة ومرخصة.",
+    donZakat:"زكاة", donSadaqah:"صدقة", donWaqf:"وقف",
+    aed:"د.إ",
+    donCustom:"أو أدخل مبلغاً آخر (درهم إماراتي)",
+    donBtn:"إتمام التبرع",
+    donNote:"تُفعَّل بوابة الدفع (مثل بوابة الدفع للحكومة الاتحادية أو مزوّد مرخص) عند الربط التقني. لا تُجمع أي بيانات بطاقات في هذه الصفحة.",
+    donSideT:"لماذا تثق بعطائك معنا؟",
+    donSideP:"تُدار أموال الزكاة في حسابات منفصلة وتُصرف في مصارفها الشرعية الثمانية، بإشراف لجنة شرعية معتمدة.",
+    donLi1:"إيصال رسمي فوري لكل تبرع، معتمد للأغراض الضريبية والتوثيقية",
+    donLi2:"تقرير أثر يصلك خلال 90 يوماً يوضح أين ذهب تبرعك",
+    donLi3:"تدقيق مالي خارجي سنوي تُنشر نتائجه علناً",
+    donLi4:"لجنة رقابة شرعية لضمان الالتزام بأحكام الزكاة والوقف",
+    volKicker:"التطوع المجتمعي",
+    volTitle:"انضم إلى 3,400 متطوع يصنعون الأثر",
+    volText:"التسجيل متاح للمواطنين والمقيمين، وتُحتسب ساعات التطوع ضمن المنصة الوطنية للتطوع.",
+    volP1T:"سجّل بياناتك", volP1P:"نموذج واحد بسيط، وتصلك رسالة تأكيد خلال يومي عمل.",
+    volP2T:"اختر مجالك", volP2P:"ميداني، لوجستي، رقمي، أو تخصصي (طبي، هندسي، إعلامي).",
+    volP3T:"اصنع الأثر", volP3P:"شهادات ساعات تطوع معتمدة، وأولوية في البرامج الوطنية.",
+    fName:"الاسم الكامل", fEmail:"البريد الإلكتروني", fPhone:"رقم الهاتف (الإمارات)",
+    fArea:"مجال التطوع المفضل",
+    fArea1:"ميداني — توزيع ومساعدات", fArea2:"لوجستي — مستودعات ونقل",
+    fArea3:"رقمي — تصميم ومحتوى", fArea4:"تخصصي — طبي / هندسي / إعلامي",
+    fSubmit:"إرسال طلب التطوع",
+    fMsg:"شكراً لك! تم استلام طلبك وسنتواصل معك خلال يومي عمل.",
+    newsKicker:"المركز الإعلامي", newsTitle:"آخر الأخبار والتقارير",
+    n1D:"28 يونيو 2026", n1T:"إطلاق حملة \"سقيا الصيف\" في خمس إمارات",
+    n1P:"توزيع 200 ألف عبوة مياه على العمال والأسر المتعففة خلال أشهر الصيف بالتعاون مع الشركاء المحليين.",
+    n2D:"14 يونيو 2026", n2T:"نشر تقرير الأثر النصف سنوي 2026",
+    n2P:"التقرير يوثق وصول 92% من إجمالي التبرعات إلى المستفيدين مباشرة، مع تفصيل كامل للمصروفات التشغيلية.",
+    n3D:"2 يونيو 2026", n3T:"شراكة جديدة مع المنصة الوطنية للتطوع",
+    n3P:"اعتماد ساعات التطوع في برامج الجمعية ضمن السجل الوطني للمتطوعين في دولة الإمارات.",
+    readMore:"اقرأ المزيد ←",
+    footAbout:"جمعية أهلية ذات نفع عام، مشهرة ومرخصة في دولة الإمارات العربية المتحدة، تعمل وفق القانون الاتحادي رقم (3) لسنة 2021 بشأن تنظيم جمع التبرعات.",
+    footLinks:"روابط سريعة", footLegal:"الامتثال",
+    footL1:"سياسة الخصوصية وحماية البيانات", footL2:"الشروط والأحكام",
+    footL3:"سياسة مكافحة غسل الأموال", footL4:"التقارير المالية المدققة",
+    copyright:"© 2026 جمعية العطاء الإماراتية — جميع الحقوق محفوظة",
+    licShort:"ترخيص رقم MOCD-CH-0000/2026",
+    donAlert:"شكراً لنيّتك الطيبة! سيتم توجيهك إلى بوابة الدفع الآمنة عند تفعيل الربط التقني. المبلغ المختار: "
+  },
+  en: {
+    skip:"Skip to main content",
+    brand:"Emirates Giving Association",
+    brandSub:"Federally licensed — United Arab Emirates",
+    navGov:"Governance", navProg:"Programs", navDon:"Donate", navVol:"Volunteer", navNews:"News",
+    heroEyebrow:"The Year of Sustainable Giving",
+    heroTitle:"Giving rooted in the values of <em>Zayed</em> — reaching where the need is greatest",
+    heroText:"A licensed Emirati charity operating to the highest standards of governance and transparency, turning your donations into documented humanitarian impact at home and abroad.",
+    heroCta1:"Donate now", heroCta2:"Explore our programs",
+    stat1:"beneficiaries in 2025", stat2:"active humanitarian programs", stat3:"of donations reach beneficiaries", stat4:"registered volunteers",
+    govKicker:"Governance & Compliance",
+    govTitle:"Transparency to UAE Government standards",
+    govText:"We operate under Federal Law No. 3 of 2021 on regulating fundraising, with financial oversight and independent annual audits.",
+    gov1T:"Full legal compliance",
+    gov1P:"Every fundraising campaign is pre-licensed by the competent authorities. No donation is ever received outside approved official channels.",
+    gov2T:"International ISO standards",
+    gov2P:"Our management systems align with ISO 9001 for quality management and ISO 26000 for social responsibility, with periodic process reviews.",
+    gov3T:"Core Humanitarian Standard (CHS)",
+    gov3P:"Programs are designed around the nine CHS commitments: dignity, accountability, and the active participation of the people we serve.",
+    licLabel:"License No.: MOCD-CH-0000/2026",
+    licSub:"Issued by the Ministry of Community Development — replace with the actual license number at launch",
+    licBtn:"Annual financial reports",
+    progKicker:"Programs & Impact",
+    progTitle:"Humanitarian programs with documented, measurable impact",
+    progText:"Every program runs on clear KPIs, with impact published in public quarterly reports.",
+    prog1T:"Clothing & Clean Water",
+    prog1P:"Providing clothing and safe drinking water to families in need within the UAE and to crisis-affected communities abroad.",
+    prog2T:"Education for All",
+    prog2P:"Scholarships, school kits, and tuition support for children of low-income families, in partnership with national education institutions.",
+    prog3T:"Emergency Humanitarian Relief",
+    prog3P:"Rapid response to disasters and humanitarian crises, coordinated with the Emirates Red Crescent and accredited UN organizations.",
+    progReach:"Beneficiaries",
+    chsNote:"In line with humanitarian principles, the association never publishes imagery that compromises beneficiary dignity, and all data is managed under the UAE's personal data protection policies.",
+    donKicker:"Zakat & Sadaqah",
+    donTitle:"Your donation is a trust — its delivery is our responsibility",
+    donText:"Choose your donation type and amount. Your contribution is processed through secure, licensed payment channels.",
+    donZakat:"Zakat", donSadaqah:"Sadaqah", donWaqf:"Waqf",
+    aed:"AED",
+    donCustom:"Or enter another amount (AED)",
+    donBtn:"Complete donation",
+    donNote:"The payment gateway (e.g., a federal or licensed provider) is activated at technical integration. No card data is collected on this page.",
+    donSideT:"Why trust your giving with us?",
+    donSideP:"Zakat funds are held in segregated accounts and disbursed to the eight Sharia-defined categories, under the supervision of an accredited Sharia committee.",
+    donLi1:"Instant official receipt for every donation, valid for tax and documentation purposes",
+    donLi2:"An impact report within 90 days showing exactly where your donation went",
+    donLi3:"Annual external financial audit with publicly published results",
+    donLi4:"A Sharia supervisory committee ensuring compliance for Zakat and Waqf",
+    volKicker:"Community Volunteering",
+    volTitle:"Join 3,400 volunteers creating impact",
+    volText:"Registration is open to citizens and residents. Volunteer hours are logged in the national volunteering platform.",
+    volP1T:"Register your details", volP1P:"One simple form — confirmation within two working days.",
+    volP2T:"Choose your field", volP2P:"Field, logistics, digital, or specialist (medical, engineering, media).",
+    volP3T:"Create impact", volP3P:"Certified volunteer hours and priority access to national programs.",
+    fName:"Full name", fEmail:"Email address", fPhone:"Phone number (UAE)",
+    fArea:"Preferred volunteering field",
+    fArea1:"Field — distribution & aid", fArea2:"Logistics — warehousing & transport",
+    fArea3:"Digital — design & content", fArea4:"Specialist — medical / engineering / media",
+    fSubmit:"Submit volunteer application",
+    fMsg:"Thank you! Your application has been received. We'll contact you within two working days.",
+    newsKicker:"Media Center", newsTitle:"Latest news & reports",
+    n1D:"28 June 2026", n1T:"\"Summer Water\" campaign launched across five emirates",
+    n1P:"Distributing 200,000 water bottles to workers and families in need during the summer months, with local partners.",
+    n2D:"14 June 2026", n2T:"H1 2026 impact report published",
+    n2P:"The report documents 92% of total donations reaching beneficiaries directly, with a full breakdown of operating costs.",
+    n3D:"2 June 2026", n3T:"New partnership with the national volunteering platform",
+    n3P:"Volunteer hours in the association's programs are now recognized in the UAE national volunteer registry.",
+    readMore:"Read more →",
+    footAbout:"A public-benefit association, registered and licensed in the United Arab Emirates, operating under Federal Law No. 3 of 2021 on regulating fundraising.",
+    footLinks:"Quick links", footLegal:"Compliance",
+    footL1:"Privacy & data protection policy", footL2:"Terms & conditions",
+    footL3:"Anti-money-laundering policy", footL4:"Audited financial reports",
+    copyright:"© 2026 Emirates Giving Association — All rights reserved",
+    licShort:"License No. MOCD-CH-0000/2026",
+    donAlert:"Thank you for your kind intention! You will be redirected to the secure payment gateway once integration is live. Selected amount: "
+  }
+};
+
+/* ============================================================
+   LANGUAGE TOGGLE (flips dir, lang, and every string)
+   ============================================================ */
+let lang = "ar";
+const langToggle = document.getElementById("langToggle");
+
+function applyLang(l){
+  lang = l;
+  const dict = I18N[l];
+  document.documentElement.lang = l;
+  document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (dict[k] !== undefined) el.textContent = dict[k];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+    const k = el.getAttribute("data-i18n-html");
+    if (dict[k] !== undefined) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => {
+    const k = el.getAttribute("data-i18n-ph");
+    if (dict[k] !== undefined) el.placeholder = dict[k];
+  });
+  langToggle.textContent = l === "ar" ? "English" : "العربية";
+}
+langToggle.addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
+menuBtn.addEventListener("click", () => {
+  const open = navMenu.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+navMenu.querySelectorAll("a").forEach(a =>
+  a.addEventListener("click", () => navMenu.classList.remove("open"))
+);
+
+/* ============================================================
+   DONATION WIDGET (front-end only; no card data collected)
+   ============================================================ */
+let donType = "zakat";
+let donAmount = 100;
+
+document.querySelectorAll(".don-type button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".don-type button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    donType = btn.dataset.don;
+  });
+});
+
+document.querySelectorAll(".amounts button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".amounts button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    donAmount = Number(btn.dataset.amt);
+    document.getElementById("customAmt").value = "";
+  });
+});
+
+document.getElementById("customAmt").addEventListener("input", e => {
+  const v = Number(e.target.value);
+  if (v > 0){
+    donAmount = v;
+    document.querySelectorAll(".amounts button").forEach(b => b.classList.remove("active"));
+  }
+});
+
+document.getElementById("donateBtn").addEventListener("click", () => {
+  alert(I18N[lang].donAlert + donAmount + " " + (lang === "ar" ? "د.إ" : "AED"));
+  // TODO (integration): redirect to licensed payment gateway with
+  // { type: donType, amount: donAmount, currency: "AED" }
+});
+
+/* ============================================================
+   VOLUNTEER FORM (front-end validation + success message)
+   ============================================================ */
+document.getElementById("volForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = document.getElementById("vName");
+  const email = document.getElementById("vEmail");
+  if (!name.value.trim() || !email.validity.valid || !email.value.trim()){
+    (!name.value.trim() ? name : email).focus();
+    return;
+  }
+  document.getElementById("volMsg").style.display = "block";
+  e.target.reset();
+  // TODO (integration): POST form data to your backend / CRM endpoint
+});
+
+/* ============================================================
+   SCROLL REVEAL (respects prefers-reduced-motion)
+   ============================================================ */
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+}
+
+/* ============================================================
+   POLICY MODALS — open/close + keyboard accessibility
+   ============================================================ */
+document.querySelectorAll("[data-modal]").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const m = document.getElementById(link.dataset.modal);
+    if (m){
+      m.classList.add("open");
+      document.body.style.overflow = "hidden";
+      m.querySelector(".modal-close").focus();
+    }
+  });
+});
+function closeModal(m){
+  m.classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.querySelectorAll(".modal-overlay").forEach(m => {
+  m.querySelector(".modal-close").addEventListener("click", () => closeModal(m));
+  m.addEventListener("click", e => { if (e.target === m) closeModal(m); });
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") document.querySelectorAll(".modal-overlay.open").forEach(closeModal);
+});
+</script>
+</body>
+</html>
